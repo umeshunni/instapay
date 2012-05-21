@@ -1,0 +1,108 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title>Page Title</title> 
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b3/jquery.mobile-1.1.0.min.css" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+</head> 
+<body> 
+
+<!-- Start of first page -->
+<div data-role="page" id="loading">
+
+	<div data-role="header">
+		<h1>InstaPay</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<h2>Loading...</h2>	
+		<div id="progressbar"><img src="images/loader.gif"></div>	
+
+<script type="text/javascript">
+$(function() {
+setTimeout(updateProgress, 5000);
+});
+
+function updateProgress() {
+	$.mobile.changePage("#home");
+}
+</script>
+
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+
+<div data-role="page" id="home">
+
+	<div data-role="header" data-id="instapaynav">
+		<h1>instapay</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<p><a href="#search" data-role="button" data-transition="slide" data-icon="plus">Login</a></p>	
+		<p><a href="#nearby" data-role="button" data-transition="slide" data-icon="home">Nearby ski areas</a></p>	
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+
+<!-- Start of second page -->
+<div data-role="page" id="search" data-add-back-btn="true">
+
+	<div data-role="header" data-id="instapaynav">
+		<h1>InstaPay</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+
+		<div data-role="fieldcontain">
+			<p><label for="search">Find a friend:</label></p>
+		    <input type="search" name="friends" id="search" value="" />
+		</div>
+		
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+<!-- Start of second page -->
+<div data-role="page" id="nearby" data-add-back-btn="true">
+
+	<div data-role="header" data-id="instapaynav">
+		<h1>InstaPay</h1>
+	</div><!-- /header -->
+	
+	<div data-role="content">	
+<script type="text/javascript">
+	
+	function success(position) {
+	  $('#status').text("lat:" + position.coords.latitude + ", long:" + position.coords.longitude );
+	return;
+	}
+	
+	function error(msg) {
+	  $('#status').text(msg.message);
+
+  		error('error:'+msg.message);
+	return;
+	}
+	
+	if (navigator.geolocation) {
+  		navigator.geolocation.getCurrentPosition(success, error);
+	} else {
+  		alert('not supported');
+	}
+	
+	
+</script>
+	<p id="status">Ski areas near </p>
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+</body>
+</html>

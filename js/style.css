@@ -1,0 +1,72 @@
+html, body { height:100%; }
+body {
+	padding:0;
+	margin:0;
+	background:#333;
+	-webkit-user-select:none;
+    -webkit-text-size-adjust:none;
+	color:#eee;
+	font-family:helvetica;
+	font-size:12px;
+}
+
+#wrapper {
+	width:100%;
+	min-width:320px;
+	height:100%;
+}
+
+#wrapper > div > div {
+	display:-webkit-box;
+	-webkit-box-orient:vertical;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+	overflow:hidden;
+}
+
+#wrapper img {
+	position:relative;
+	display:block;
+	border:5px solid #eee;
+	-webkit-box-shadow:0 2px 6px #000;
+	-webkit-border-radius:2px;
+	-webkit-transition-duration:.4s;
+	-webkit-transition-property:opacity;
+	opacity:1;
+}
+
+#wrapper span {
+	position:relative;
+	display:block;
+	background:#000 -webkit-gradient(linear, 0 0, 0 100%, from(#333), to(#000));
+	border:2px solid #777;
+	padding:0 20px;
+	margin-top:10px;
+	height:20px;
+	line-height:20px;
+	-webkit-border-radius:11px;
+	-webkit-background-clip:padding-box;
+	-webkit-box-shadow:0 2px 6px #000;
+	-webkit-transition-duration:.4s;
+	-webkit-transition-property:opacity;
+	opacity:1;
+	text-shadow:0 -1px 0 #000;
+}
+
+#wrapper > div > .swipeview-loading {
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#444), to(#555)),
+		-webkit-gradient(linear, 0 0, 100% 0, from(#777), to(#777));
+	background-position:50% 50%, 50% 50%;
+	background-size:200px 140px, 210px 150px;
+	background-repeat:no-repeat;
+}
+
+#wrapper > div > .swipeview-loading img {
+	-webkit-transition-duration:0;
+	opacity:0;
+}
+
+#wrapper > div > .swipeview-loading span {
+	-webkit-transition-duration:0;
+	opacity:0;
+}
