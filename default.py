@@ -29,7 +29,7 @@ class RPCHandler(webapp.RequestHandler):
 
 class MainPage(webapp.RequestHandler):
     def get(self):
-        path = os.path.join(os.path.dirname(__file__), 'traffic.html')
+        path = os.path.join(os.path.dirname(__file__), 'home.html')
         template_values = ''
         self.response.out.write(template.render(path, template_values))
 
